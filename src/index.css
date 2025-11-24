@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800:900&display=swap');
+
+@theme {
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* YOUR BRAND COLORS (Extracted from Logo) */
+  --color-brand-bg: #000;       /* Very dark navy/black for background */
+  --color-brand-card: #0b101a;     /* Slightly lighter for cards */
+  
+  --color-brand-primary: #2a7a90;  /* The TEAL from the 'i' */
+  --color-brand-accent: #f5a623;   /* The ORANGE from the 'g' */
+  --color-brand-dark-accent: #0b2e40; /* The DARK BLUE bar */
+  
+  --color-text-main: #ffffff;
+  --color-text-muted: #94a3b8;
+}
+
+/* :root {
+  --color-brand-navy: #032B44;
+  --color-brand-teal: #137C92;
+  --color-brand-teal-light: #3BA1B3;
+  --color-brand-orange: #FFA124;
+  --color-brand-orange-dark: #FF8A00;
+} */
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  /* This creates the subtle overall background noise/texture if desired, otherwise plain */
+  background-image: radial-gradient(circle at 50% 0%, rgba(42, 122, 144, 0.15), transparent 70%);
+}
+
+/* The "Glow" Utility Class */
+.glow-effect {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(42, 122, 144, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+@layer utilities {
+  .text-glow-teal {
+    text-shadow: 
+      /* Layer 1: The tight, bright glow */
+      0 0 10px rgba(34, 211, 238, 0.8), 
+      /* Layer 2: The wide, ambient dispersion */
+      0 0 20px rgba(34, 211, 238, 0.4),
+      /* Layer 3: Subtle outer atmosphere (optional, for extra punch) */
+      /* 0 0 30px rgba(34, 211, 238, 0.2); */
+  }
+}
+/* Orange Button Gradient for extra pop */
+.btn-primary {
+  background: linear-gradient(135deg, #f5a623 0%, #e08e0b 100%);
+  box-shadow: 0 4px 20px rgba(245, 166, 35, 0.3);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ffb340 0%, #f5a623 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4);
+}
+
+@layer utilities {
+  /* Teal text glow for "60 Pieces" & "2 Hours" */
+  .text-glow-teal {
+    text-shadow: 0 0 20px rgba(42, 122, 144, 0.6), 0 0 40px rgba(42, 122, 144, 0.3);
+  }
+  
+  /* Orange text glow for the badge or other accents */
+  .text-glow-orange {
+    text-shadow: 0 0 15px rgba(245, 166, 35, 0.6), 0 0 30px rgba(245, 166, 35, 0.3);
+  }
+}
