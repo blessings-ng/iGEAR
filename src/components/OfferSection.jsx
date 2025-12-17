@@ -126,7 +126,7 @@ const OfferSection = () => {
         
         <div className="flex justify-center">
             {/* Button needs to match theme. Assuming Button accepts styling or wrapper does it */}
-            <Button className="!bg-[#6366f1] hover:!bg-[#4f46e5] shadow-[0_0_30px_rgba(99,102,241,0.5)] border-none hover:shadow-[0_0_50px_rgba(99,102,241,0.7)] transition-all duration-300">
+            <Button >
                 &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
             </Button>
         </div>
