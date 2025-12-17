@@ -77,7 +77,7 @@ export default function HeroVSL() {
             playsInline
             controls={hasInteracted} // Only show controls after interaction
         >
-            <source src="/public/VSL VIDEO (CAPCUT).mp4" type="video/mp4" />
+            <source src="/VSL.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 
