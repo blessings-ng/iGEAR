@@ -1,109 +1,143 @@
-import React from 'react';
-import { Pencil, User, TrendingUp } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { CheckCircle2 } from 'lucide-react';
+import Button from './ui/Button'; // Assuming this path is correct based on previous context
 
 const Process = () => {
+  // Base color: #39879e (Muted Teal)
+  // Bright accent for glow/pop: #22d3ee (Electric Cyan)
+  
   return (
-<section className="w-full py-24 relative overflow-hidden border-t border-white/5 
-                    bg-gradient-to-r from-[#050505] via-[#1a0505] to-[#050505]">      
-      {/* Background Red Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+    // Updated background gradient for a subtle teal center hint
+    <section className="w-full py-24 relative overflow-hidden border-t border-white/5 bg-gradient-to-r from-[#050505] via-[#05151a] to-[#050505]">      
+      
+      {/* Background Lively Glow Blob */}
+      {/* Used the brighter cyan (#22d3ee) with higher opacity for a livelier backdrop */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[800px] bg-[#22d3ee]/20 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10 flex flex-col items-center">
+      <div className="max-w-4xl mx-auto px-4 relative z-10 flex flex-col items-center">
         
-        {/* 1. THE "SHADE" BADGE */}
-        <div className="mb-8 inline-block">
-          <div className="px-4 py-1.5 rounded-full border border-red-600 bg-red-600/10 text-red-500 text-xs md:text-sm font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(220,38,38,0.3)]">
-            I'm Not Throwing Shade At You But...
-          </div>
+        {/* --- 1. THE GLOWY SUBHEADING --- */}
+        {/* Brighter border, brighter text, stronger cyan shadow glow */}
+        <div className="mb-12 inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#22d3ee]/50 bg-[#22d3ee]/10 shadow-[0_0_30px_rgba(34,211,238,0.5)] backdrop-blur-sm">
+             <span className="text-[#22d3ee] font-bold uppercase tracking-widest text-xs md:text-sm drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">
+                WHO THIS IS FOR
+             </span>
         </div>
 
-        {/* 2. THE HEADLINES */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 text-center">
-          You're a Business Owner, Not a YouTuber
-        </h2>
-
-        <div className="text-center text-gray-400 space-y-2 mb-12 text-sm md:text-base font-medium max-w-3xl">
-          <p>Let's be real - the problem isn't that you don't believe in YouTube.</p>
-          <p>You already know it's the move. You see the channels. You've watched your competitors blow up. You've probably even tried it yourself.</p>
-          <p className="pt-4 text-white font-bold">But why isn't it working for you?</p>
+        {/* --- 2. THE HEADLINES --- */}
+        <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">
+                You’ll Get the Best Results If You Are:
+            </h2>
         </div>
 
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-12 text-center">
-          The way to make YouTube work, isn't to:
-        </h3>
+        {/* --- 3. THE ANIMATED LIST --- */}
+        <div className="w-full max-w-2xl flex flex-col gap-5 mb-20">
+            
+            {/* Item 1 */}
+            <SlideInItem index={0}>
+                <LivelyListItem text="A service-based business owner" />
+            </SlideInItem>
 
-        {/* 3. THE 2x2 RED GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
-          
-          {/* CARD 1: Random Editor */}
-          <RedCard 
-            icon={<Pencil size={28} />}
-            title="Hire a random editor and hope for the best"
-          >
-            YouTube success isn't about flashy cuts and cool music; <span className="text-white underline underline-offset-4 decoration-white/40">it's about strategy - what to say, how to say it, and how to link it back to your offer.</span>
-            <br /><br />
-            <span className="text-white underline underline-offset-4 decoration-white/40">Most editors can't help with that. They just make things "look" nice and try to make flashy edits.</span>
-          </RedCard>
+            {/* Item 2 */}
+            <SlideInItem index={1}>
+                <LivelyListItem text="Selling a strong coaching or consulting offer" />
+            </SlideInItem>
 
-          {/* CARD 2: Trust Value */}
-          <RedCard 
-            icon={<User size={28} />}
-            title='Trust that your "value" will be enough to book calls'
-          >
-            Yes, valuable content is important. But <span className="text-white underline underline-offset-4 decoration-white/40">so is the packaging, SEO, thumbnail, editing.</span>
-            <br /><br />
-            Without the proper strategy and packaging, the <span className="text-white underline underline-offset-4 decoration-white/40">'Gamma Doc Presentation' you spent 3 hours building will be for nothing.</span>
-          </RedCard>
+            {/* Item 3 (Highlighted with extra neon underline) */}
+            <SlideInItem index={2}>
+                <LivelyListItem text={<>Earning <span className="text-white font-extrabold border-b-2 border-[#22d3ee] drop-shadow-[0_2px_10px_rgba(34,211,238,0.8)]">$10k–$20k per month</span></>} />
+            </SlideInItem>
 
-          {/* CARD 3: Viral Content */}
-          <RedCard 
-            icon={<TrendingUp size={28} />}
-            title="Study what makes content go viral & try to replicate it"
-          >
-            Understanding how Mr. Beast grew a 400M subscriber audience isn't going to help your coaching program book more sales calls... neither is reverse engineering Alex Hormozi content.
-            <br /><br />
-            <span className="text-white underline underline-offset-4 decoration-white/40">You need to understand the fundamentals of content that books calls for YOUR offer.</span>
-          </RedCard>
+            {/* Item 4 */}
+            <SlideInItem index={3}>
+                <LivelyListItem text="Looking to scale trust, authority, and conversions" />
+            </SlideInItem>
 
-          {/* CARD 4: Do Everything Yourself */}
-          <RedCard 
-            icon={<User size={28} />}
-            title="Try to do everything yourself"
-          >
-            Scriptwriting, Filming, Editing, Thumbnails, SEO, Posting. If you're handling it all, <span className="text-white underline underline-offset-4 decoration-white/40">no wonder YouTube instantly goes on the back-burner when you sign a new client.</span>
-            <br /><br />
-            Consistency is everything with YouTube - <span className="text-white underline underline-offset-4 decoration-white/40">you can't afford to have big gaps between uploads.</span>
-          </RedCard>
+            {/* Item 5 */}
+            <SlideInItem index={4}>
+                <LivelyListItem text="Ready to turn content into predictable revenue" />
+            </SlideInItem>
 
         </div>
 
+        {/* --- 4. BOTTOM NOTE --- */}
+        <div className="text-center mb-12">
+             {/* Updated border color to bright cyan */}
+             <p className="text-gray-300 text-lg font-medium max-w-2xl mx-auto border-l-4 border-[#22d3ee] pl-6 md:border-none md:pl-0 py-2">
+                This is for real businesses solving real problems and are ready to scale.
+            </p>
+        </div>
+
+        <div className='flex justify-center'>
+          {/* Styled Button to match the lively theme */}
+          <Button className=' mx-auto'>
+             &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
+          </Button>
+        </div>
       </div>
-    </section>
+    </section>  
   );
 };
 
-// THE REUSABLE RED CARD COMPONENT
-function RedCard({ icon, title, children }) {
+// --- SUB-COMPONENTS ---
+
+// 1. Lively Themed List Item
+function LivelyListItem({ text }) {
   return (
-    <div className="p-8 rounded-2xl border border-red-600 bg-[#050505] hover:bg-red-950/10 transition-colors duration-300 flex flex-col gap-4 h-full">
-      
-      {/* Header: Icon + Title */}
-      <div className="flex items-start gap-4">
-        <div className="text-red-500 flex-shrink-0 mt-1">
-          {icon}
+    // Uses base color for border, brighter tint for BG.
+    // Hover state significantly increases glow intensity and switches border to bright cyan.
+    <div className="flex items-center gap-6 p-6 rounded-3xl border border-[#39879e]/50 bg-[#39879e]/20 shadow-[0_0_25px_rgba(57,135,158,0.2)] hover:border-[#22d3ee] hover:bg-[#22d3ee]/20 hover:shadow-[0_0_50px_rgba(34,211,238,0.5)] transition-all duration-500 group backdrop-blur-md">
+        {/* Icon uses the bright cyan */}
+        <div className="text-[#22d3ee] shrink-0 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-500">
+            <CheckCircle2 size={32} strokeWidth={3} />
         </div>
-        <h4 className="text-white font-bold text-lg leading-tight">
-          {title}
-        </h4>
-      </div>
-
-      {/* Body Text */}
-      <div className="text-gray-400 text-sm leading-relaxed">
-        {children}
-      </div>
-
+        <span className="text-gray-200 text-lg md:text-xl font-medium leading-relaxed group-hover:text-white transition-colors duration-300">
+            {text}
+        </span>
     </div>
   );
+}
+
+// 2. Re-Triggering Slide-In Animation (Unchanged logic)
+function SlideInItem({ children, index }) {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { 
+                threshold: 0.2, 
+                rootMargin: "0px 0px -50px 0px" 
+            } 
+        );
+
+        if (ref.current) observer.observe(ref.current);
+
+        return () => {
+            if (ref.current) observer.disconnect();
+        };
+    }, []);
+
+    const delay = `${index * 100}ms`;
+
+    return (
+        <div 
+            ref={ref}
+            style={{ transitionDelay: isVisible ? delay : '0ms' }}
+            className={`transform transition-all duration-700 cubic-bezier(0.17, 0.55, 0.55, 1)
+                ${isVisible 
+                    ? 'opacity-100 translate-x-0 blur-0'
+                    : 'opacity-0 -translate-x-20 blur-sm'
+                }
+            `}
+        >
+            {children}
+        </div>
+    );
 }
 
 export default Process;

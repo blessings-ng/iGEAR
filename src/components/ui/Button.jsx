@@ -4,11 +4,12 @@ export default function Button({ children, className = "", fullWidth = false, ..
   
   const baseStyles = `
     flex items-center justify-center text-center gap-2
-    transition-all duration-300 transform hover:-translate-y-1
+    transition-all duration-300 transform hover:-translate-y-1 
     text-white shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)]
-    uppercase font-black
+    uppercase font-black rounded-lg
     
     /* MOBILE (Default - Smallest Screen) */
+    
     w-full           /* Force full width on phones */
     py-4 px-3        /* Minimal side padding to prevent overflow */
     text-sm          /* Smaller font to fit long text */
@@ -29,12 +30,9 @@ export default function Button({ children, className = "", fullWidth = false, ..
   
   const variants = "btn-primary"; 
 
-  // We removed the manual width logic variable because we handled it in baseStyles above
-  // (w-full on mobile, md:w-auto on desktop)
-
   return (
     <button 
-      className={`${baseStyles} ${variants} ${className}`} 
+      className={`${baseStyles} ${variants} ${className} ${fullWidth ? 'w-full' : ''}`} 
       {...props}
     >
       {children}

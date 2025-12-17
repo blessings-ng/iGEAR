@@ -1,9 +1,7 @@
 import React from 'react';
-import Navbar from './components/NavBar';
 import HeroVSL from './components/HeroVSL';
 import SocialProof from './components/SocialProof';
 import Process from './components/Process';
-import Results from './components/Results';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import BreakdownSection from './components/BreakdownSection';
@@ -11,6 +9,8 @@ import OfferSection from './components/OfferSection';
 import OtherInformation from './components/OtherInformation';
 import ComparisonSection from './components/ComparisonSection';
 import ClientsInterview from './components/ClientsInterview';
+import FinalCTA from './components/FinalCTA';
+import PromiseSection from './components/PromiseSection';
 
 function App() {
   return (
@@ -20,14 +20,15 @@ function App() {
       <main>
         <HeroVSL />
         <SocialProof />
-        <Process />
-        <BreakdownSection />
         <OfferSection />
+        <Process />
         <ClientsInterview />
-        <ComparisonSection />
-        <FAQ />
+        <PromiseSection />
         <OtherInformation /> 
-        
+        {/* <FinalCTA /> */}
+        {/* <BreakdownSection /> */}
+        {/* <ComparisonSection /> */}
+        {/* <FAQ /> */}        
         {/* Final CTA Section before footer */}
         {/* <section className="py-20 px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Scale?</h2>

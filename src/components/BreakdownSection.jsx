@@ -76,8 +76,8 @@ const BreakdownSection = () => {
 
         {/* 6. CTA BUTTON */}
         <div className="mt-12">
-            <Button>
-           &gt;&gt; Get Started Now &lt;&lt;
+            <Button className=' mx-auto'>
+              &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
             </Button>
         </div>
 

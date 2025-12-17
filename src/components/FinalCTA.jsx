@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 
 const FinalCTA = () => {
   return (
@@ -25,9 +24,7 @@ const FinalCTA = () => {
 
         {/* The Big Button */}
         <div className="w-full max-w-md">
-            <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-xl py-6 px-12 rounded-xl shadow-[0_0_50px_rgba(34,211,238,0.4)] hover:shadow-[0_0_70px_rgba(34,211,238,0.6)] uppercase tracking-widest transition-all transform hover:-translate-y-1 border-none">
-                &gt;&gt; Book Your Discovery Call &lt;&lt;
-            </Button>
+            
             <p className="mt-6 text-sm text-gray-500 font-medium">
                 No pressure. No hard selling. Just a strategy session.
             </p>
