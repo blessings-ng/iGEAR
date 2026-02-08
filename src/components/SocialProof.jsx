@@ -35,19 +35,19 @@ const SocialProof = () => {
               <li className="flex items-start">
                 <XCircle className="w-6 h-6 text-blue-500 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  You don’t have the time to script, edit, optimize, and upload weekly
+                  You don’t have the time to script, edit, optimize, and upload weekly.
                 </span>
               </li>
               <li className="flex items-start">
                 <XCircle className="w-6 h-6 text-blue-500 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  You’ve posted before… but it didn’t convert into clients
+                  You’ve posted before… but it didn’t convert into clients.
                 </span>
               </li>
               <li className="flex items-start">
                 <XCircle className="w-6 h-6 text-blue-500 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  You know competitors are using YouTube to close high-ticket deals, but you don’t know how
+                  You know competitors are using YouTube to close high-ticket deals, but you don’t know how.
                 </span>
               </li>
             </ul>
@@ -55,7 +55,7 @@ const SocialProof = () => {
 
           {/* Middle Text */}
           <h4 className="text-3xl font-bold text-white text-center py-4">
-             And You Know That YouTube Can Get You:
+             Yet You Know That YouTube Can Get You:
           </h4>
 
           {/* Card 2: The Desire */}
@@ -68,19 +68,19 @@ const SocialProof = () => {
               <li className="flex items-start">
                 <CheckCircle className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  Predictable High-ticket inbound clients (That pay faster than cold outreach or referrals)
+                  Predictable High-ticket inbound clients (That pay faster than cold outreach or referrals).
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  Qualified Sales Calls
+                  Qualified Sales Calls.
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
                 <span className="text-gray-300 text-lg">
-                  Thousands of dollars in digital product sales
+                  Thousands of dollars in digital product sales.
                 </span>
               </li>
             </ul>
