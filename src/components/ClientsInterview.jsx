@@ -55,7 +55,7 @@ const ClientsInterview = () => {
         {/* --- POINT 1: PUBLIC PROOF (The YouTube Video) --- */}
         <div className="mb-24 w-full flex flex-col items-center text-center max-w-3xl mx-auto">
             <h4 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                 You can watch us do everything we teach publicly.
+                 You can watch us teach everything we do publicly.
             </h4>
             
             <p className="text-gray-300 text-base mb-8">
@@ -102,7 +102,7 @@ const ClientsInterview = () => {
             </div>
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
-                (We plan to use that channel’s ad revenue to <span className="text-white font-bold border-b-2 border-[#00F3FF] shadow-[0_10px_20px_-10px_rgba(0,243,255,0.5)]">sponsor educational programs in Africa.</span> Your growth fuels global impact.)
+                (We plan to use that channel’s ad revenue to <span className="text-white font-bold border-b-2 border-[#00F3FF] shadow-[0_10px_20px_-10px_rgba(0,243,255,0.5)]">sponsor educational programs in Africa.</span> Our growth fuels global impact.)
             </p>
         </div>
 
@@ -131,7 +131,7 @@ const ClientsInterview = () => {
         {/* --- POINT 3: RESULTS & BRANDS --- */}
         <div className="mb-24 w-full flex flex-col items-center text-center">
             <h4 className="text-xl md:text-3xl font-bold text-white mb-10">
-                 Proven capability. Real results.
+                 We’ve helped clients to:
             </h4>
             <div className="w-full max-w-3xl flex flex-col gap-8">
                 <div className="bg-[#0a0a0a] border border-[#00F3FF]/30 p-8 rounded-3xl w-full shadow-[0_0_30px_rgba(0,243,255,0.1)] backdrop-blur-sm">

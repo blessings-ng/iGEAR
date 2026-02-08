@@ -41,7 +41,7 @@ const Process = () => {
 
             {/* Item 2 */}
             <SlideInItem index={1}>
-                <LivelyListItem text="Selling a strong coaching or consulting offer" />
+                <LivelyListItem text="Selling a coaching or consulting offer" />
             </SlideInItem>
 
             {/* Item 3 (Highlighted with extra neon underline) */}
@@ -65,7 +65,7 @@ const Process = () => {
         <div className="text-center mb-12">
              {/* Updated border color to bright cyan */}
              <p className="text-gray-300 text-lg font-medium max-w-2xl mx-auto border-l-4 border-[#22d3ee] pl-6 md:border-none md:pl-0 py-2">
-                This is for real businesses solving real problems and are ready to scale.
+                This is for real businesses solving real problems.
             </p>
         </div>
 

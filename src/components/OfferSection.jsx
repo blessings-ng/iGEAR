@@ -35,17 +35,21 @@ const OfferSection = () => {
         {/* --- 2. WHAT WE DO LIST (Centered Block, Left-Aligned Text) --- */}
         <div className="mb-24 w-full flex flex-col items-center">
             <h4 className="text-2xl font-bold text-white mb-10 text-center drop-shadow-md">
-                Here’s what we do for you:
+                We give you:
             </h4>
             
             {/* The list container - Updated Border & Shadow */}
             <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-[#6366f1]/30 p-8 md:p-10 rounded-2xl w-full max-w-2xl shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:border-[#6366f1]/60 transition-colors duration-500">
                 <ul className="space-y-5">
-                    <ListItem text="4 long-form videos/month" />
-                    <ListItem text="Topic research, scripting & strategic angles" />
-                    <ListItem text="Full editing, optimization & thumbnails" />
-                    <ListItem text="Publishing & channel management" />
-                    <ListItem text="Weekly performance reports" />
+                    <ListItem text="4 - 8 Long Form Videos/Month. " />
+                    <ListItem text=" Well Researched Topics in a Content Calendar" />
+                    <ListItem text="High-converting YouTube Scripts" />
+                    <ListItem text="Monthly Strategy Session." />
+                    <ListItem text="YouTube SEO" />
+                    <ListItem text="Channel Management." />
+                    <ListItem text="Weekly Performance Reports." />
+                    <ListItem text=" High CTR Thumbnails" />
+                    <ListItem text="World-class editing" />
                 </ul>
             </div>
         </div>
@@ -56,15 +60,15 @@ const OfferSection = () => {
                 HOW WE DELIVER YOUR YOUTUBE DFY SYSTEM
             </h4>
             
-            <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-gray-300 text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
                 We run your YouTube engine in-house (literally). Because our team is physically together, communication is faster, creativity is higher, and the final product is consistently premium.
             </p>
 
             {/* Placeholder for Team Screenshot - Updated Hover Glow */}
-            <div className="w-full aspect-video bg-[#111] border border-white/10 rounded-xl flex items-center justify-center text-gray-600 shadow-2xl relative overflow-hidden group">
+            {/* <div className="w-full aspect-video bg-[#111] border border-white/10 rounded-xl flex items-center justify-center text-gray-600 shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#6366f1]/5 group-hover:bg-[#6366f1]/20 transition-colors duration-500"></div>
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">[Screenshot of Team]</span>
-            </div>
+            </div> */}
         </div>
 
         {/* --- 4. TRANSPARENCY (Centered) --- */}
@@ -98,7 +102,7 @@ const OfferSection = () => {
                 {/* Result 2: $10,000 */}
                 <CounterBox 
                     prefix="$" 
-                    target={10000} 
+                    target={27000} 
                     suffix="+" 
                     label="In Digital Product Sales" 
                     
@@ -110,7 +114,7 @@ const OfferSection = () => {
                         100%
                     </div>
                     <p className="text-[#818cf8] font-bold uppercase tracking-wider text-sm mt-2 group-hover:text-[#6366f1] transition-colors">
-                        Trust Before The First Call
+                        Trust before your first discovery call
                     </p>
                 </div>
 

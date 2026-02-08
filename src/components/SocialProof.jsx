@@ -55,7 +55,7 @@ const SocialProof = () => {
 
           {/* Middle Text */}
           <h4 className="text-3xl font-bold text-white text-center py-4">
-             Yet You Know That YouTube Can Get You:
+             And You Know That YouTube Can Get You:
           </h4>
 
           {/* Card 2: The Desire */}

@@ -31,28 +31,25 @@ export default function HeroVSL() {
 
 
       {/* --- 1. The Audience Callout Banner --- */}
-      <div className="mb-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs md:text-sm font-bold uppercase tracking-widest shadow-[0_0_25px_rgba(59,130,246,0.25)] backdrop-blur-md">
-        
-        {/* The Pulsing Dot */}
-        <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-        </span>
+      <div className="mb-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 font-bold uppercase shadow-[0_0_25px_rgba(59,130,246,0.25)] backdrop-blur-md max-w-full">
+  
+  {/* The Pulsing Dot */}
+  <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+  </span>
 
-        {/* The Text */}
-        <span className="text-center text- overflow-hidden whitespace-nowrap text-ellipsis">
-             Online service based business owners, coaches, & consultants who want High-Ticket Clients, Qualified Calls, & Digital Sales From YouTube. 
-        </span>
-      </div>
+  {/* The Text - Responsive Fixes Applied Here */}
+  <span className="whitespace-normal text-left leading-snug tracking-normal md:tracking-widest text-[10px] sm:text-xs md:text-sm">
+    Service-based business owners who want to build authority attract high-value customers.
+  </span>
+
+</div>
 
       {/* --- 2. HEADLINE --- */}
      <h1 className="text-xl md:text-4xl font-bold mb-4 tracking-tight text-white max-w-8xl mx-auto">
 
- Get High-Ticket Clients, Qualified Calls & Digital Sales Using YouTube (Without Worrying About Filming Every Week, Editing, Or Doing SEO).
-
-
-
- 
+       Attract high-value clients on YouTube Without Worrying About Filming, Editing, or Doing SEO
 
 </h1>
       {/* --- 3. Subheadline --- */}
@@ -107,7 +104,7 @@ export default function HeroVSL() {
 
       {/* --- 4. Call to Action --- */}
       <div className="mx-auto flex flex-col items-center gap-4">
-        <Button className="">
+        <Button className="" >
            &gt;&gt; Book Your Free Strategy Call &lt;&lt;
         </Button>
       </div>
