@@ -41,7 +41,7 @@ export default function HeroVSL() {
 
   {/* The Text - Responsive Fixes Applied Here */}
   <span className="whitespace-normal text-left leading-snug tracking-normal md:tracking-widest text-[10px] sm:text-xs md:text-sm">
-    Service-based business owners who want to build authority attract high-value customers.
+    Service-based business owners who want to build authority and attract high-value customers.
   </span>
 
 </div>
