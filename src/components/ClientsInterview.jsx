@@ -1,25 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Quote, CheckCircle2, ChevronLeft, ChevronRight, Volume2 } from 'lucide-react';
+import daniel from "../assets/image/daniel-igear.jpeg";
+import auret from "../assets/image/auret-igear.jpeg";
+import niel from "../assets/image/niel-igear.jpeg";
 
-// --- MOCK DATA FOR CAROUSEL ---
 const TESTIMONIALS = [
   {
     id: 1,
-    quote: "Rahmon is an asset to any creative... thoughtful, proactive and very creative. His team helped me grow my youtube channel... Highly, highly recommend him!",
-    name: "Happy Client",
-    role: "Founder / CEO"
+    quote: "We entrusted Rahmon & his team with our YouTube channel and was BLOWN with their execution! We moved from about 600 to nearly nearly 2k subscribers and more inbounds in less that 6 months.",
+    name: "Daniel",
+    role: "CEO, BRANDOXEL",
+    image: daniel
   },
   {
     id: 2,
-    quote: "The best investment we've made for our brand this year. The strategy was spot on, and the editing quality completely separates us from the competition.",
-    name: "Sarah Jenkins",
-    role: "Marketing Director"
+    quote: "Working with Rahmon and his team completely leveled up our YouTube videos. Our watch time has increased, and even long-time viewers are commenting on how much better the edits feel. The new style is more engaging, and their weekly reports make the whole process super clear. If you want higher-quality edits from a team that actually understands your vision, I highly recommend them.",
+    name: "Auret",
+    role: "Essetino Media",
+    image: auret
   },
+  
   {
-    id: 3,
-    quote: "I didn't have to touch a thing. I just recorded the raw video, sent it over, and woke up to a fully optimized upload that brought in leads immediately.",
-    name: "Michael Ross",
-    role: "High-Ticket Coach"
+    id: 4,
+    quote: "Rahmon is an extremely enthusiastic and fun character to work with, full of great suggestions, Always completes on time and the videos Rahmon created were exactly what we needed!",
+    name: "Niel",
+    role: "Founder BBR",
+    image: niel
   }
 ];
 
@@ -65,9 +71,7 @@ const ClientsInterview = () => {
             {/* YOUTUBE EMBED CONTAINER */}
             <div className="w-full aspect-video bg-black rounded-3xl overflow-hidden border border-[#00F3FF]/50 shadow-[0_0_30px_rgba(0,243,255,0.15)] mb-8 group hover:border-[#00F3FF] hover:shadow-[0_0_50px_rgba(0,243,255,0.4)] transition-all duration-300 relative z-20">
                 
-                {/* FIX FOR DEPLOYMENT: 
-                   Added 'playsinline=1' to both states. This is critical for mobile browsers.
-                */}
+               
                 <iframe 
                     className="w-full h-full object-cover"
                     src={
@@ -102,7 +106,7 @@ const ClientsInterview = () => {
             </div>
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
-                (We plan to use that channel’s ad revenue to <span className="text-white font-bold border-b-2 border-[#00F3FF] shadow-[0_10px_20px_-10px_rgba(0,243,255,0.5)]">sponsor educational programs in Africa.</span> Our growth fuels global impact.)
+                (We plan to use that channel’s ad revenue to <span className="text-white font-bold border-b-2 border-[#00F3FF] shadow-[0_10px_20px_-10px_rgba(0,243,255,0.5)]">sponsor educational programs in Africa.</span> )
             </p>
         </div>
 
@@ -138,7 +142,7 @@ const ClientsInterview = () => {
                     <h5 className="text-[#00F3FF] font-black uppercase tracking-wider text-xs mb-6 text-left drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">We’ve helped clients:</h5>
                     <ul className="space-y-5 text-left">
                         <ListItem text={<>Grow from <span className="text-white font-bold">0 → 500 subscribers</span></>} />
-                        <ListItem text={<>Grow from <span className="text-white font-bold">800 → nearly 2,000 subscribers</span></>} />
+                        <ListItem text={<>Grow from <span className="text-white font-bold">600 → nearly 2,000 subscribers</span></>} />
                         <ListItem text={<>Generate <span className="text-white font-bold">thousands of views</span> on videos</>} />
                         <ListItem text="Turn YouTube traffic into actual revenue" />
                     </ul>
@@ -192,9 +196,9 @@ function TestimonialCarousel() {
        <div className="pl-12 relative z-10 transition-opacity duration-500 ease-in-out mt-4">
           <p className="text-white text-lg italic leading-relaxed mb-6 drop-shadow-md">"{currentTestimonial.quote}"</p>
           <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gray-800 rounded-full border border-[#00F3FF]/50 shrink-0"></div> 
+              <div className="w-10 h-10 bg-gray-800 rounded-full border border-[#00F3FF]/50 shrink-0">{currentTestimonial.image && <img src={currentTestimonial.image} alt={currentTestimonial.name} className="w-full h-full rounded-full object-cover" />}</div> 
               <div className="text-left">
-                  <div className="text-white font-bold text-sm">{currentTestimonial.name}</div>
+                  <div className="text-white font-bold text-sm">{currentTestimonial.name} </div>
                   <div className="text-[#00F3FF] text-[10px] uppercase font-black tracking-wider drop-shadow-[0_0_2px_rgba(0,243,255,1)]">{currentTestimonial.role}</div>
               </div>
           </div>
