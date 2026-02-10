@@ -3,6 +3,7 @@ import { Play, Quote, CheckCircle2, ChevronLeft, ChevronRight, Volume2 } from 'l
 import daniel from "../assets/image/daniel-igear.jpeg";
 import auret from "../assets/image/auret-igear.jpeg";
 import niel from "../assets/image/niel-igear.jpeg";
+import arithecreator from "../assets/image/arithecreator-igear.jpeg";
 
 const TESTIMONIALS = [
   {
@@ -162,9 +163,9 @@ const ClientsInterview = () => {
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-5xl mb-12">
                 <BrandGridItem image="https://randomuser.me/api/portraits/men/32.jpg" logoColor="bg-orange-500" logoInitials="SB" name="Steady Bow" count="10k+ Followers" />
-                <BrandGridItem image="https://randomuser.me/api/portraits/women/44.jpg" logoColor="bg-white text-black" logoInitials="ARI" name="Ari the Creator" count="Creator Cohort" />
-                <BrandGridItem image="https://randomuser.me/api/portraits/women/65.jpg" logoColor="bg-purple-600" logoInitials="EM" name="Essetino Media" count="63k Subscribers" />
-                <BrandGridItem image="https://randomuser.me/api/portraits/men/85.jpg" logoColor="bg-orange-600" logoInitials="BC" name="Brandcool" count="5k+ Followers" />
+                <BrandGridItem image={arithecreator} logoColor="bg-white text-black" logoInitials="ARI" name="Ari the Creator" count="5k subscribers" />
+                <BrandGridItem image="" logoColor="bg-purple-600" logoInitials="EM" name="Essetino Media" count="63k Subscribers" />
+                <BrandGridItem image={daniel} logoColor="bg-orange-600" logoInitials="BC" name="Brandoxel" count="2k+ Subscribers" />
             </div>
             <p className="text-white text-lg font-medium max-w-3xl border-l-4 border-[#00F3FF] pl-6 py-4 bg-gradient-to-r from-[#00F3FF]/10 to-transparent text-left mx-auto rounded-r-xl shadow-[inset_10px_0_20px_-10px_rgba(0,243,255,0.3)]">
                 You’re not guessing whether we can deliver. Our work proves it.
