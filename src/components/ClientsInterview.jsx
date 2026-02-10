@@ -241,7 +241,7 @@ function NeonCounterBox({ target, label, prefix = "", suffix = "", isRevenue = f
 
     return (
         <div ref={boxRef} className="flex-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-[#0a0a0a] border border-[#00F3FF]/30 shadow-[0_0_15px_rgba(0,243,255,0.1)] text-center group hover:border-[#00F3FF] hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] transition-all duration-300">
-            <div className="text-4xl md:text-6xl font-black text-white mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">{isRevenue && target === 999 ? '$xxx' : `${prefix}${count.toLocaleString()}${suffix}`}</div>
+            <div className="text-4xl md:text-6xl font-black text-white mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">{isRevenue && target === 999 ? '$80,000' : `${prefix}${count.toLocaleString()}${suffix}`}</div>
             <p className="text-[#00F3FF] font-bold uppercase tracking-wider text-[10px] md:text-xs drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">{label}</p>
         </div>
     );
@@ -253,7 +253,6 @@ function BrandGridItem({ image, logoColor, logoInitials, name, count, logoimage 
             <div className="relative w-full aspect-square rounded-3xl overflow-hidden border-2 border-[#00F3FF]/20 group-hover:border-[#00F3FF] group-hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300">
                 <img src={image} alt={name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                 
-                {/* FIX 4: Cleaned up the Logo styling and corrected variable names */}
                 <div className={`absolute top-3 right-3 w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/20 shadow-lg flex items-center justify-center z-10 ${logoColor} text-white transform group-hover:scale-110 transition-transform overflow-hidden`}>
                    {logoimage ? (
                      <img src={logoimage} alt={logoInitials} className="w-full h-full object-cover" />

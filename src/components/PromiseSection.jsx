@@ -73,7 +73,7 @@ const PromiseSection = () => {
                     <div className="text-gray-300 text-lg leading-relaxed">
                         Help <span className="text-white font-bold border-b-2 border-[#00C9FF] shadow-[0_2px_10px_rgba(0,201,255,0.5)]">10 service-based business owners</span> generate:
                         <div className="my-6">
-                            <AzureCounter target={600000} prefix="$" />
+                            <AzureCounter target={300000} prefix="$" />
                         </div>
                         through our YouTube Fast Track System.
                     </div>
@@ -96,9 +96,6 @@ const PromiseSection = () => {
   );
 };
 
-// ==============================
-// SUB-COMPONENTS
-// ==============================
 
 // 1. AZURE COUNTER
 function AzureCounter({ target, prefix = "" }) {
