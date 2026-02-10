@@ -82,7 +82,7 @@ const OfferSection = () => {
              {/* Placeholder for Weekly Overview Screenshot - Updated Hover Glow */}
              <div className="w-full aspect-video bg-[#111] border border-white/10 rounded-xl flex items-center justify-center text-gray-600 shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#6366f1]/5 group-hover:bg-[#6366f1]/20 transition-colors duration-500"></div>
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300"><img src={report} alt="" />[Screenshot of Weekly Overview]</span>
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300"><img src={report} alt="" /></span>
             </div>
         </div>
 
