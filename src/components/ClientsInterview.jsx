@@ -4,6 +4,11 @@ import daniel from "../assets/image/daniel-igear.jpeg";
 import auret from "../assets/image/auret-igear.jpeg";
 import niel from "../assets/image/niel-igear.jpeg";
 import arithecreator from "../assets/image/arithecreator-igear.jpeg";
+import arithecreatorlogo from "../assets/image/arithecreator-logo-igear.jpeg";
+import essentomedialogo from "../assets/image/essentomedialogo-igear.jpeg";
+import essentomedia from "../assets/image/essetinomedia-igear.jpeg";
+import steadybowlogo from "../assets/image/steadybow-logo-igear.jpeg";
+import steadybow from "../assets/image/steadybow-igear.jpeg"
 
 const TESTIMONIALS = [
   {
@@ -140,7 +145,7 @@ const ClientsInterview = () => {
             </h4>
             <div className="w-full max-w-3xl flex flex-col gap-8">
                 <div className="bg-[#0a0a0a] border border-[#00F3FF]/30 p-8 rounded-3xl w-full shadow-[0_0_30px_rgba(0,243,255,0.1)] backdrop-blur-sm">
-                    <h5 className="text-[#00F3FF] font-black uppercase tracking-wider text-xs mb-6 text-left drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">We’ve helped clients:</h5>
+                
                     <ul className="space-y-5 text-left">
                         <ListItem text={<>Grow from <span className="text-white font-bold">0 → 500 subscribers</span></>} />
                         <ListItem text={<>Grow from <span className="text-white font-bold">600 → nearly 2,000 subscribers</span></>} />
@@ -162,9 +167,9 @@ const ClientsInterview = () => {
                  Brands that trust our work:
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-5xl mb-12">
-                <BrandGridItem image="https://randomuser.me/api/portraits/men/32.jpg" logoColor="bg-orange-500" logoInitials="SB" name="Steady Bow" count="10k+ Followers" />
+                <BrandGridItem image={steadybow} logoColor="bg-orange-500" logoInitials="SB" name="Steady Bow" count="10k+ Followers" />
                 <BrandGridItem image={arithecreator} logoColor="bg-white text-black" logoInitials="ARI" name="Ari the Creator" count="5k subscribers" />
-                <BrandGridItem image="" logoColor="bg-purple-600" logoInitials="EM" name="Essetino Media" count="63k Subscribers" />
+                <BrandGridItem image={essentomedia} logoColor="bg-purple-600" logoInitials="EM" name="Essetino Media" count="63k Subscribers" />
                 <BrandGridItem image={daniel} logoColor="bg-orange-600" logoInitials="BC" name="Brandoxel" count="2k+ Subscribers" />
             </div>
             <p className="text-white text-lg font-medium max-w-3xl border-l-4 border-[#00F3FF] pl-6 py-4 bg-gradient-to-r from-[#00F3FF]/10 to-transparent text-left mx-auto rounded-r-xl shadow-[inset_10px_0_20px_-10px_rgba(0,243,255,0.3)]">
@@ -257,7 +262,7 @@ function BrandGridItem({ image, logoColor, logoInitials, name, count }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             </div>
             <div className="text-center w-full">
-                <div className="text-white font-bold text-lg mb-1 group-hover:text-[#00F3FF] transition-colors">{name}</div>
+                <div className="text-white font-bold text-sm mb-1 group-hover:text-[#00F3FF] transition-colors">{name}</div>
                 <div className="text-[#00F3FF] text-xs font-bold bg-[#111] border border-[#00F3FF]/20 px-3 py-1 rounded-full inline-block group-hover:bg-[#00F3FF]/10 group-hover:border-[#00F3FF] transition-all shadow-[0_0_10px_rgba(0,243,255,0.1)]">{count}</div>
             </div>
         </div>
