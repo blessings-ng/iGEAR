@@ -144,7 +144,7 @@ const ClientsInterview = () => {
             </div>
         </div>
         
-        {/* Brands Grid - Fixed Mobile & Typos */}
+        {/* Brands Grid */}
         <div className="w-full flex flex-col items-center text-center">
              <h4 className="text-xl md:text-2xl font-bold text-white mb-4">
                  Brands that trust our work:
@@ -172,27 +172,27 @@ const ClientsInterview = () => {
 function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    // FIX 1: ADDED ".length" TO PREVENT CRASH
-    const timer = setInterval(() => { 
-        setCurrent((prev) => (prev + 1) % TESTIMONIALS.length); 
-    }, 5000); 
-    return () => clearInterval(timer);
-  }, []);
+  // FIX 1: AUTOPLAY REMOVED (No useEffect)
 
   const nextSlide = () => setCurrent((current + 1) % TESTIMONIALS.length);
   const prevSlide = () => setCurrent((current - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   
-  // FIX 2: Check if TESTIMONIALS exists before accessing
   if (!TESTIMONIALS || TESTIMONIALS.length === 0) return null;
   const currentTestimonial = TESTIMONIALS[current];
 
   return (
-    // FIX 3: Min-height adjustment for mobile to prevent jumping
-    <div className="w-full bg-[#0a0a0a] border border-[#00F3FF]/30 rounded-3xl p-8 relative shadow-lg hover:border-[#00F3FF] hover:shadow-[0_0_30px_rgba(0,243,255,0.2)] transition-all duration-300 min-h-[500px] md:min-h-[350px] flex flex-col justify-between group">
-       <Quote className="text-[#00F3FF] absolute top-6 left-6 opacity-80 drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]" size={40} />
-       <div className="pl-12 relative z-10 transition-opacity duration-500 ease-in-out mt-4">
-          <p className="text-white text-lg italic leading-relaxed mb-6 drop-shadow-md">"{currentTestimonial.quote}"</p>
+    // FIX 2: Mobile Optimizations:
+    // - pb-24: Adds padding at bottom so text doesn't overlap arrows
+    // - min-h-[400px]: Reduced from 500, fits mobile screens better
+    <div className="w-full bg-[#0a0a0a] border border-[#00F3FF]/30 rounded-3xl p-6 md:p-8 relative shadow-lg hover:border-[#00F3FF] hover:shadow-[0_0_30px_rgba(0,243,255,0.2)] transition-all duration-300 min-h-[400px] md:min-h-[350px] flex flex-col justify-between group pb-24 md:pb-8">
+       <Quote className="text-[#00F3FF] absolute top-6 left-6 opacity-80 drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]" size={32} />
+       
+       <div className="pl-8 md:pl-12 relative z-10 transition-opacity duration-500 ease-in-out mt-4">
+          {/* FIX 3: Text size reduced to text-base for mobile */}
+          <p className="text-white text-base md:text-lg italic leading-relaxed mb-6 drop-shadow-md">
+            "{currentTestimonial.quote}"
+          </p>
+          
           <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-gray-800 rounded-full border border-[#00F3FF]/50 shrink-0 overflow-hidden">
                 {currentTestimonial.image && <img src={currentTestimonial.image} alt={currentTestimonial.name} className="w-full h-full object-cover" />}
@@ -203,11 +203,15 @@ function TestimonialCarousel() {
               </div>
           </div>
        </div>
+
+       {/* Controls */}
        <div className="absolute bottom-6 right-6 flex items-center gap-2">
          <button onClick={prevSlide} className="p-2 rounded-full bg-black border border-[#00F3FF]/30 hover:bg-[#00F3FF] hover:text-black text-[#00F3FF] transition-all shadow-[0_0_10px_rgba(0,243,255,0.1)]"><ChevronLeft size={18} /></button>
          <button onClick={nextSlide} className="p-2 rounded-full bg-black border border-[#00F3FF]/30 hover:bg-[#00F3FF] hover:text-black text-[#00F3FF] transition-all shadow-[0_0_10px_rgba(0,243,255,0.1)]"><ChevronRight size={18} /></button>
        </div>
-       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+
+       {/* Dots */}
+       <div className="absolute bottom-8 left-6 md:left-1/2 md:-translate-x-1/2 flex gap-2">
           {TESTIMONIALS.map((_, idx) => (
              <button key={idx} onClick={() => setCurrent(idx)} className={`h-1.5 rounded-full transition-all duration-300 shadow-[0_0_5px_rgba(0,243,255,0.8)] ${current === idx ? 'bg-[#00F3FF] w-6' : 'bg-[#00F3FF]/30 w-2'}`} />
           ))}
