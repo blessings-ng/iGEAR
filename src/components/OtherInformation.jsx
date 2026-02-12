@@ -51,13 +51,11 @@ const OtherInformation = () => {
         </div>
 
         {/* 5. MASSIVE CTA BUTTON (Simulated) */}
-        <div className="mt-16 relative">
-            <div className="absolute inset-0 bg-[#F79F1A] blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 rounded-full"></div>
-            
-            <Button>
-              &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
-            </Button>
-            
+        <div className="mt-16 relative w-full">
+            <Button 
+             mobileText="&gt;&gt; Book Now &lt;&lt;" 
+             desktopText="&gt;&gt;Book Your Free Strategy Call &lt;&lt;"
+             /> 
             
         </div>
 

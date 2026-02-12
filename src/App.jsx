@@ -25,19 +25,7 @@ function App() {
         <ClientsInterview />
         <PromiseSection />
         <OtherInformation /> 
-        {/* <FinalCTA /> */}
-        {/* <BreakdownSection /> */}
-        {/* <ComparisonSection /> */}
-        {/* <FAQ /> */}        
-        {/* Final CTA Section before footer */}
-        {/* <section className="py-20 px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Scale?</h2>
-            <div className="flex justify-center">
-                <button className="py-4 px-12 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform">
-                    Book Your Call Now
-                </button>
-            </div>
-        </section> */}
+        
       </main>
 
       <Footer />

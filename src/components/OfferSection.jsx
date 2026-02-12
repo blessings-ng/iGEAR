@@ -130,11 +130,12 @@ const OfferSection = () => {
             </p>
         </div>
         
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full">
             {/* Button needs to match theme. Assuming Button accepts styling or wrapper does it */}
-            <Button >
-                &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
-            </Button>
+            <Button 
+             mobileText="&gt;&gt; Book Now &lt;&lt;" 
+            desktopText="&gt;&gt;Book Your Free Strategy Call &lt;&lt;"
+             />
         </div>
 
       </div>

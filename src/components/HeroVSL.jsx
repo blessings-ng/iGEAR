@@ -20,17 +20,15 @@ export default function HeroVSL() {
   return (
     <section className="relative w-full max-w-6xl mx-auto px-4 pt-12 pb-20 flex flex-col items-center text-center z-10">
       
-      {/* =======================================================
-          THE ENHANCED GLOW (Replacing simple .glow-effect)
-      ======================================================= */}
-      {/* 1. Large ambient blue center glow */}
+      
+      {/*  Large ambient blue center glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
       
-      {/* 2. Focused brighter glow behind video area */}
+      {/* Focused brighter glow behind video area */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[400px] bg-blue-500/10 blur-[90px] rounded-full pointer-events-none -z-10"></div>
 
 
-      {/* --- 1. The Audience Callout Banner --- */}
+      {/* --- The Audience Callout Banner --- */}
       <div className="mb-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 font-bold uppercase shadow-[0_0_25px_rgba(59,130,246,0.25)] backdrop-blur-md max-w-full">
   
   {/* The Pulsing Dot */}
@@ -39,7 +37,7 @@ export default function HeroVSL() {
     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
   </span>
 
-  {/* The Text - Responsive Fixes Applied Here */}
+  {/* The Text */}
   <span className="whitespace-normal text-left leading-snug tracking-normal md:tracking-widest text-[10px] sm:text-xs md:text-sm">
     Service-based business owners who want to build authority and attract high-value customers.
   </span>
@@ -103,10 +101,12 @@ export default function HeroVSL() {
       </div>
 
       {/* --- 4. Call to Action --- */}
-      <div className="mx-auto flex flex-col items-center gap-4">
-        <Button className="" >
-           &gt;&gt; Book Your Free Strategy Call &lt;&lt;
-        </Button>
+      <div className="mx-auto flex flex-col w-full items-center gap-4">
+        <Button 
+           mobileText="&gt;&gt;  Book Now  &lt;&lt;" 
+           desktopText="&gt;&gt; Book Your Free Strategy Call &lt;&lt;"
+         /> 
+        
       </div>
 
     </section>

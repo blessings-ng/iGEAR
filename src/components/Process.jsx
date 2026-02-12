@@ -69,11 +69,12 @@ const Process = () => {
             </p>
         </div>
 
-        <div className='flex justify-center'>
+        <div className='flex justify-center w-full'>
           {/* Styled Button to match the lively theme */}
-          <Button className=' mx-auto'>
-             &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
-          </Button>
+         <Button 
+            mobileText="&gt;&gt; Book Now &lt;&lt;" 
+            desktopText="&gt;&gt;Book Your Free Strategy Call &lt;&lt;"
+        />
         </div>
       </div>
     </section>  

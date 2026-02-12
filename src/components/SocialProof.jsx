@@ -92,11 +92,12 @@ const SocialProof = () => {
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             The Bottom Line Is, You Know Youtube Works, But You Don’t Have A Proven System To Make It Work For Your Business.
           </p>
-          <div className="flex justify-center">
-            <Button>
-              &gt;&gt; BOOK YOUR FREE STRATEGY CALL &lt;&lt;
-            </Button>
-          </div>
+           <div className="mx-auto flex flex-col items-center gap-4">
+                <Button 
+                   mobileText="&gt;&gt; Book Now &lt;&lt;" 
+                   desktopText="&gt;&gt;Book Your Free Strategy Call &lt;&lt;"
+                 /> 
+            </div>
         </div>
       </div>
     </section>

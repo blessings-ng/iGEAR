@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Quote, CheckCircle2, ChevronLeft, ChevronRight, Volume2 } from 'lucide-react';
-// Make sure these paths are correct for your project!
 import daniel from "../assets/image/daniel-igear.jpeg";
 import auret from "../assets/image/auret-igear.jpeg";
 import niel from "../assets/image/niel-igear.jpeg";
@@ -11,6 +10,7 @@ import essentomedia from "../assets/image/essetinomedia-igear.jpeg";
 import steadybowlogo from "../assets/image/steadybow-logo-igear.jpeg";
 import steadybow from "../assets/image/steadybow-igear.jpeg";
 import brandoxel from "../assets/image/brandoxel-igear.jpeg";
+import testimony from "../assets/video/Essetino Testimonial 2.mp4"
 
 const TESTIMONIALS = [
   {
@@ -37,7 +37,12 @@ const TESTIMONIALS = [
 ];
 
 const ClientsInterview = () => {
+  // State for Video 1 (YouTube)
   const [hasInteracted, setHasInteracted] = useState(false);
+  
+  // State for Video 2 (Local Testimonial)
+  const [playTestimonial, setPlayTestimonial] = useState(false);
+  
   const VIDEO_ID = "rA8Cks8Cl2c"; 
 
   return (
@@ -60,7 +65,7 @@ const ClientsInterview = () => {
             </h3>
         </div>
 
-        {/* Video Section */}
+        {/* Video Section 1: Public Proof */}
         <div className="mb-24 w-full flex flex-col items-center text-center max-w-3xl mx-auto">
             <h4 className="text-2xl md:text-3xl font-bold text-white mb-6">
                  You can watch us teach everything we do publicly.
@@ -105,20 +110,44 @@ const ClientsInterview = () => {
             </p>
         </div>
 
-        {/* Testimonials */}
+        {/* Video Section 2: Testimonials */}
         <div className="mb-24 w-full flex flex-col items-center">
              <h4 className="text-xl md:text-4xl font-bold text-white mb-10 text-center">
                 Our clients speak for us.
             </h4>
             <div className="flex flex-col gap-8 w-full max-w-3xl">
-                <div className="w-full aspect-video bg-[#0a0a0a] border border-[#00F3FF]/30 rounded-3xl flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] hover:border-[#00F3FF] transition-all duration-300">
-                    <div className="absolute inset-0 bg-[#00F3FF]/5 group-hover:bg-[#00F3FF]/10 transition-all"></div>
-                    <div className="w-20 h-20 bg-[#00F3FF] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,243,255,0.8)] z-10 group-hover:scale-110 transition-transform duration-300">
-                        <Play className="text-black fill-black ml-1" size={32} />
-                    </div>
-                    <span className="mt-6 text-[#00F3FF] text-sm font-bold tracking-widest z-10 uppercase group-hover:text-white transition-colors drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">[Video Testimonial Placeholder]</span>
+                
+                {/* --- FIX START: Local Testimonial Video --- */}
+                <div 
+                    onClick={() => setPlayTestimonial(true)}
+                    className="w-full aspect-video bg-[#0a0a0a] border border-[#00F3FF]/30 rounded-3xl flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] hover:border-[#00F3FF] transition-all duration-300"
+                > 
+                    {/* Used <video> instead of iframe for local MP4 files */}
+                    <video 
+                        src={testimony} 
+                        className="absolute inset-0 w-full h-full z-0 object-cover"
+                        controls={playTestimonial} // Show controls only when playing
+                        autoPlay={playTestimonial} // Auto play when state is true
+                        playsInline
+                    />
+
+                    {/* Overlay - Only shows if NOT playing */}
+                    {!playTestimonial && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                             
+                             <div className="relative w-20 h-20 bg-[#00F3FF] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,243,255,0.8)] group-hover:scale-110 transition-transform duration-300">
+                                <Play className="text-black fill-black ml-1" size={32} />
+                             </div>
+                             
+                             <span className="relative mt-6 text-[#00F3FF] text-sm font-bold tracking-widest uppercase group-hover:text-white transition-colors drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">
+                                Watch Testimonial
+                             </span>
+                        </div>
+                    )}
                 </div>
-                {/* FIXED CAROUSEL COMPONENT IS USED HERE */}
+                {/* --- FIX END --- */}
+
                 <TestimonialCarousel />
             </div>
         </div>
