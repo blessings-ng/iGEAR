@@ -18,12 +18,13 @@ export default function Navbar({ isDarkMode = true }) {
 
       {/* RESPONSIVE SOCIALS */}
       <div className="flex items-center gap-4 md:gap-8">
-        <a href="https://www.instagram.com/igear.vfxedit?igsh=MWF1MDdpZDc3MW5yMA%3D%3D&utm_source=qr" className="hover:text-brand-teal transition-colors"  target="_blank"><Instagram size={18} className="md:w-5 md:h-5" /></a>
+        <a href="https://www.instagram.com/rahmonbethel?igsh=MTZpY2thNmZiaTdmbQ%3D%3D&utm_source=qr" className="hover:text-brand-teal transition-colors"  target="_blank"><Instagram size={18} className="md:w-5 md:h-5" /></a>
         <a href="https://youtube.com/@igearmedia?si=vmdd6Wdl_lY05ga7" className="hover:text-brand-teal transition-colors" target="_blank"><Youtube size={20} className="md:w-6 md:h-6" /></a>
         <a href="mailto:igearenterprises@gmail.com" className="hover:text-brand-teal transition-colors" target="_blank"><Mail size={18} className="md:w-5 md:h-5" /></a>
         
         <a 
-          href="https://wa.me/yournumber" 
+          href="https://wa.me/+2349132815840
+" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-2 md:px-4 py-1.5 border border-green-500/30 rounded-full bg-green-500/5 hover:bg-green-500/10 transition-all"

@@ -55,7 +55,7 @@ const Footer = () => {
                 <div className="flex gap-4">
                     
                     {/* Instagram */}
-                    <SocialLink href="https://www.instagram.com/igear.vfxedit?igsh=MWF1MDdpZDc3MW5yMA%3D%3D&utm_source=qr" target="_blank" icon={<Instagram size={20} />} label="Instagram" />
+                    <SocialLink href="https://www.instagram.com/rahmonbethel?igsh=MTZpY2thNmZiaTdmbQ%3D%3D&utm_source=qr" target="_blank" icon={<Instagram size={20} />} label="Instagram" />
                     
                     {/* YouTube */}
                     <SocialLink href="https://youtube.com/@igearmedia?si=vmdd6Wdl_lY05ga7" target="_blank" icon={<Youtube size={20} />} label="YouTube" />
