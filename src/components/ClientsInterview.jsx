@@ -210,14 +210,10 @@ function TestimonialCarousel() {
   const currentTestimonial = TESTIMONIALS[current];
 
   return (
-    // FIX 2: Mobile Optimizations:
-    // - pb-24: Adds padding at bottom so text doesn't overlap arrows
-    // - min-h-[400px]: Reduced from 500, fits mobile screens better
     <div className="w-full bg-[#0a0a0a] border border-[#00F3FF]/30 rounded-3xl p-6 md:p-8 relative shadow-lg hover:border-[#00F3FF] hover:shadow-[0_0_30px_rgba(0,243,255,0.2)] transition-all duration-300 min-h-[400px] md:min-h-[350px] flex flex-col justify-between group pb-24 md:pb-8">
        <Quote className="text-[#00F3FF] absolute top-6 left-6 opacity-80 drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]" size={32} />
        
        <div className="pl-8 md:pl-12 relative z-10 transition-opacity duration-500 ease-in-out mt-4">
-          {/* FIX 3: Text size reduced to text-base for mobile */}
           <p className="text-white text-base md:text-lg italic leading-relaxed mb-6 drop-shadow-md">
             "{currentTestimonial.quote}"
           </p>

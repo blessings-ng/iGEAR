@@ -71,7 +71,7 @@ const Footer = () => {
         {/* BOTTOM BAR */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-gray-600 text-sm">
-                &copy; {currentYear} iGear. All rights reserved.
+                &copy; {currentYear} iGear Media by Blessings. All rights reserved.
             </p>
             
         </div>
