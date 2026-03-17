@@ -1,6 +1,8 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import testimony from "../../assets/video/Essetino Testimonial 2.mp4"
+
 
 export default function Hero({ isDarkMode = true }) {
   const videoRef = useRef(null);
@@ -61,7 +63,7 @@ export default function Hero({ isDarkMode = true }) {
             hasStarted && !isPaused ? "opacity-100" : "opacity-40"
           }`}
         >
-          <source src="/Essetino Testimonial 2.mp4" type="video/mp4" />
+          <source src={testimony} type="video/mp4" />
         </video>
 
         <div className={`absolute inset-0 transition-opacity duration-700 ${

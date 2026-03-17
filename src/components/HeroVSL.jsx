@@ -70,7 +70,7 @@ export default function HeroVSL() {
             muted={true}
             loop={true}
             playsInline
-            controls={hasInteracted} // Only show controls after interaction
+            controls={hasInteracted} 
         >
             <source src="/VSL.mp4" type="video/mp4" />
             Your browser does not support the video tag.

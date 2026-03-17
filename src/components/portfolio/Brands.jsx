@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 
+
 const brands = [
   { name: "Steady Bow", count: "10k+ Followers", color: "bg-orange-500" },
   { name: "Ari the Creator", count: "5k subscribers", color: "bg-white text-black" },
@@ -11,7 +12,6 @@ const brands = [
 // ADDED FAILSAFE: Defaults to true
 export default function Brands({ isDarkMode = true }) {
   return (
-    // RESTORED: Dynamic background and top border
     <section className={`w-full py-12 px-4 flex flex-col items-center border-t transition-colors duration-500 font-sans antialiased ${isDarkMode ? "border-white/10 bg-black" : "border-zinc-200 bg-white"}`}>
       <p className="text-[10px] uppercase tracking-[0.3em] mb-10 font-bold text-zinc-500">
         Brands we've worked with
@@ -25,7 +25,6 @@ export default function Brands({ isDarkMode = true }) {
                <div className={`w-12 h-12 flex items-center justify-center font-black ${brand.color}`}>{brand.name[0]}</div>
             </div>
             
-            {/* RESTORED: Text color switches to black in light mode so it doesn't disappear */}
             <p className={`font-bold text-sm ${isDarkMode ? "text-white" : "text-black"}`}>{brand.name}</p>
             
             <span className="text-[9px] px-3 py-1 border border-brand-teal text-brand-teal font-bold rounded-full uppercase">{brand.count}</span>
