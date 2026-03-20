@@ -14,7 +14,7 @@ const portfolioVideos = [
   { id: "3", title: "The Moment I Stopped", subtitle: "Tying My Self Worth to the Numbers:", videoId: "q0fS1HQPuaM" },
   { id: "4", title: "The Right Way", subtitle: "How To Upload Videos On YouTube:", videoId: "tTBnn4TGFSk" },
   { id: "5", title: "Project Preview", subtitle: "We had 90 Minutes or My Kids Miss Santa!", videoId: "WexXhORkCKk" },
-  { id: "6", title: "What Happens When", subtitle: "Kids Lead The Day", videoId: "-9uqcSNDEc0" },
+  // { id: "6", title: "What Happens When", subtitle: "Kids Lead The Day", videoId: "-9uqcSNDEc0" },
   { id: "7", title: "Risk Register", subtitle: "Build Without Risking Your Sanity:", videoId: "0AtbaKrLTDo" },
   { id: "8", title: "Cash Flow", subtitle: "How to Manage in Your Business:", videoId: "m-Tq9d7GDgM" },
 ];

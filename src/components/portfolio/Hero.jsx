@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import testimony from "../../assets/video/Essetino Testimonial 2.mp4"
-
+import Button from "./Button";
 
 export default function Hero({ isDarkMode = true }) {
   const videoRef = useRef(null);
@@ -45,47 +45,63 @@ export default function Hero({ isDarkMode = true }) {
         </h1>
       </div>
 
+      {/* PARENT WRAPPER: Handles the hover group and the click event */}
       <div 
-        className={`relative aspect-video w-full max-w-6xl overflow-hidden rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
-          hasStarted && !isPaused 
-            ? 'border-brand-teal shadow-[0_0_40px_rgba(20,184,166,0.2)]' 
-            : (isDarkMode ? 'border-white/10' : 'border-zinc-200')
-        }`}
+        className="relative w-full max-w-6xl aspect-video mx-auto group cursor-pointer"
         onClick={handleToggle}
       >
-        <video
-          ref={videoRef} 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-            hasStarted && !isPaused ? "opacity-100" : "opacity-40"
-          }`}
-        >
-          <source src={testimony} type="video/mp4" />
-        </video>
-
-        <div className={`absolute inset-0 transition-opacity duration-700 ${
-          hasStarted && !isPaused ? "bg-transparent" : "bg-black/40"
+        
+        {/* THE GLOW: Sits safely behind the video container */}
+        <div className={`absolute -inset-4 rounded-[2rem] transition-all duration-500 blur-[50px] pointer-events-none z-0 ${
+          hasStarted && !isPaused 
+            ? "bg-[#14b8a6] opacity-50 scale-105" // Stays glowing while playing
+            : "bg-[#14b8a6] opacity-0 group-hover:opacity-100" // Pops on hover
         }`} />
 
-        <div className="relative z-10 flex h-full items-center justify-center">
-          <AnimatePresence>
-            {(isPaused || !hasStarted) && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                exit={{ opacity: 0, scale: 1.1 }}
-                className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 backdrop-blur-sm"
-              >
-                <svg className="ml-1 h-8 w-8 md:h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {/* THE VIDEO CONTAINER: Sits on top (z-10) and hides the video overflow */}
+        <div className={`relative z-10 w-full h-full overflow-hidden rounded-2xl border-2 transition-all duration-300 bg-black ${
+          hasStarted && !isPaused 
+            ? 'border-[#14b8a6]' 
+            : (isDarkMode ? 'border-white/10' : 'border-zinc-200')
+        }`}>
+          <video
+            ref={videoRef} 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+              hasStarted && !isPaused ? "opacity-100" : "opacity-40"
+            }`}
+          >
+            <source src={testimony} type="video/mp4" />
+          </video>
+
+          <div className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${
+            hasStarted && !isPaused ? "bg-transparent" : "bg-black/40"
+          }`} />
+
+          <div className="relative z-20 flex h-full items-center justify-center pointer-events-none">
+            <AnimatePresence>
+              {(isPaused || !hasStarted) && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }} 
+                  animate={{ opacity: 1, scale: 1 }} 
+                  exit={{ opacity: 0, scale: 1.1 }}
+                  className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full border border-white/40 bg-black/40 backdrop-blur-sm pointer-events-auto"
+                >
+                  <svg className="ml-1 h-8 w-8 md:h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <div>
+            <Button>Work With Us</Button>
+          </div>
         </div>
+
       </div>
     </section>
   );

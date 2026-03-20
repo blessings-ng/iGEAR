@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
+import Button from "./Button";
 
-// ADDED FAILSAFE: Defaults to true
 export default function TiltCard({ 
   id, title, subtitle, videoId, side, activePlayingId, setPlayingId, isDarkMode = true 
 }) {
@@ -28,36 +28,38 @@ export default function TiltCard({
   };
 
   return (
-    <div ref={containerRef} style={{ perspective: "1500px" }} className="w-full flex flex-col items-center font-sans antialiased">
+    <div ref={containerRef} style={{ perspective: "1500px" }} className="w-full flex flex-col items-center">
       <motion.div
         style={{ x: xMove, scale, opacity, rotateX: isPlaying ? 0 : rotateX, rotateY: isPlaying ? 0 : rotateY, transformStyle: "preserve-3d" }}
         onMouseMove={(e) => handleInput(e.clientX, e.clientY)}
         onClick={() => !isPlaying && setPlayingId(id)}
-        className="relative w-full aspect-video group"
+        className="relative w-full aspect-video group cursor-pointer"
       >
-        <div className={`absolute inset-0 transition-all duration-700 opacity-0 blur-[60px] -z-10 scale-95 group-hover:opacity-40 group-hover:scale-110 ${isPlaying ? 'opacity-60 scale-125 bg-red-600' : 'bg-brand-teal'}`} />
+        {/* THE GLOW: Put your exact HEX CODE right inside the brackets below! */}
+        <div className={`absolute -inset-4 rounded-xl transition-all duration-500 blur-[50px] pointer-events-none opacity-0 group-hover:opacity-100 ${
+          isPlaying ? "bg-red-600 scale-105" : "bg-[#14b8a6]"
+        }`} />
 
-        {/* FIXED THEME: Container borders and background dynamically adapt to light mode */}
-        <div className={`relative w-full h-full overflow-hidden border-[1px] transition-all duration-500 ${
-          isPlaying ? 'border-red-600' : (isDarkMode ? 'border-zinc-900 bg-black' : 'border-zinc-200 bg-zinc-50')
+        {/* THE CARD */}
+        <div className={`relative w-full h-full overflow-hidden border-[1px] transition-all duration-500 bg-black ${
+          isPlaying ? 'border-red-600' : isDarkMode ? 'border-zinc-900' : 'border-zinc-200 bg-zinc-50'
         }`}>
           {!isPlaying ? (
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full pointer-events-none">
               <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} className="h-full w-full object-cover group-hover:opacity-80 transition-all" alt={title} />
               <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-red-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all">
+                 <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-red-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all pointer-events-auto">
                     <svg className="ml-1 h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                  </div>
               </div>
             </div>
           ) : (
-            <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} className="w-full h-full border-none" allow="autoplay; fullscreen" />
+            <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} className="w-full h-full border-none pointer-events-auto" allow="autoplay; fullscreen" />
           )}
         </div>
       </motion.div>
       
       <motion.div style={{ x: xMove, opacity }} className="mt-8 text-center px-4">
-        {/* FIXED THEME & FONTS: Built high-end contrast using font weights and tracking that shifts safely in light mode */}
         <p className={`text-base md:text-xl lg:text-2xl transition-colors duration-500 ${isDarkMode ? "text-zinc-300" : "text-zinc-600"}`}>
           <span className="font-light tracking-wide">{subtitle}</span>{" "}
           <span className={`font-black tracking-tight block sm:inline mt-1 sm:mt-0 ${isDarkMode ? "text-white" : "text-black"}`}>
@@ -65,6 +67,9 @@ export default function TiltCard({
           </span>
         </p>
       </motion.div>
+      <div className="mt-8 md:mt-12 relative z-20">
+        <Button/>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import Button from "./Button";
 
 const TESTIMONIALS = [
   { id: 1, quote: "We entrusted Rahmon & his team with our YouTube channel and was BLOWN with their execution!...", name: "Daniel", role: "CEO, BRANDOXEL" },
@@ -61,6 +62,9 @@ export default function Reviews({ isDarkMode = true }) {
             <ChevronRight size={48} strokeWidth={1} />
           </button>
         </div>
+      </div>
+      <div className="mt-8 md:mt-12 relative z-20">
+        <Button/>
       </div>
     </section>
   );
