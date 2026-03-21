@@ -51,17 +51,17 @@ export default function Hero({ isDarkMode = true }) {
         onClick={handleToggle}
       >
         
-        {/* THE GLOW: Sits safely behind the video container */}
+        {/* CHANGED TO GOLD: Sits safely behind the video container */}
         <div className={`absolute -inset-4 rounded-[2rem] transition-all duration-500 blur-[50px] pointer-events-none z-0 ${
           hasStarted && !isPaused 
-            ? "bg-[#14b8a6] opacity-50 scale-105" // Stays glowing while playing
-            : "bg-[#14b8a6] opacity-0 group-hover:opacity-100" // Pops on hover
+            ? "bg-[#d4af37] opacity-50 scale-105" 
+            : "bg-[#d4af37] opacity-0 group-hover:opacity-100" 
         }`} />
 
-        {/* THE VIDEO CONTAINER: Sits on top (z-10) and hides the video overflow */}
+        {/* CHANGED TO GOLD: Sits on top (z-10) and hides the video overflow */}
         <div className={`relative z-10 w-full h-full overflow-hidden rounded-2xl border-2 transition-all duration-300 bg-black ${
           hasStarted && !isPaused 
-            ? 'border-[#14b8a6]' 
+            ? 'border-[#d4af37]' 
             : (isDarkMode ? 'border-white/10' : 'border-zinc-200')
         }`}>
           <video
@@ -97,12 +97,14 @@ export default function Hero({ isDarkMode = true }) {
               )}
             </AnimatePresence>
           </div>
-          <div>
-            <Button>Work With Us</Button>
-          </div>
         </div>
-
       </div>
+
+      {/* FIXED: Placed the button safely outside the video container so it doesn't get cut off */}
+      <div className="mt-12 md:mt-16 relative z-20">
+        <Button>Work With Us</Button>
+      </div>
+
     </section>
   );
 }

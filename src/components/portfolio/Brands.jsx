@@ -95,7 +95,7 @@ export default function Brands({ isDarkMode = true }) {
           </div>
         ))}
       </div>
-      <div className="mt-8 md:mt-12 relative z-20">
+      <div className="mt-10 md:mt-12 relative z-20">
         <Button/>
       </div>
     </section>

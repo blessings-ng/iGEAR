@@ -35,9 +35,9 @@ export default function TiltCard({
         onClick={() => !isPlaying && setPlayingId(id)}
         className="relative w-full aspect-video group cursor-pointer"
       >
-        {/* THE GLOW: Put your exact HEX CODE right inside the brackets below! */}
+        {/* CHANGED: Swapped teal for the #d4af37 gold hex code */}
         <div className={`absolute -inset-4 rounded-xl transition-all duration-500 blur-[50px] pointer-events-none opacity-0 group-hover:opacity-100 ${
-          isPlaying ? "bg-red-600 scale-105" : "bg-[#14b8a6]"
+          isPlaying ? "bg-red-600 scale-105" : "bg-[#d4af37]"
         }`} />
 
         {/* THE CARD */}
@@ -62,7 +62,8 @@ export default function TiltCard({
       <motion.div style={{ x: xMove, opacity }} className="mt-8 text-center px-4">
         <p className={`text-base md:text-xl lg:text-2xl transition-colors duration-500 ${isDarkMode ? "text-zinc-300" : "text-zinc-600"}`}>
           <span className="font-light tracking-wide">{subtitle}</span>{" "}
-          <span className={`font-black tracking-tight block sm:inline mt-1 sm:mt-0 ${isDarkMode ? "text-white" : "text-black"}`}>
+          {/* CHANGED: Made the title match the gold color */}
+          <span className="font-black tracking-tight block sm:inline mt-1 sm:mt-0 text-[#d4af37]">
             ({title})
           </span>
         </p>
