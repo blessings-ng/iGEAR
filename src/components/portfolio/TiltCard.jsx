@@ -35,16 +35,17 @@ export default function TiltCard({
         onClick={() => !isPlaying && setPlayingId(id)}
         className="relative w-full aspect-video group cursor-pointer"
       >
-        {/* CHANGED: Restored the natural bloom shape (inset-0, scale, blur) and the red color */}
-        <div className={`absolute inset-0 transition-all duration-700 blur-[60px] pointer-events-none z-0 ${
-          isPlaying 
-            ? "bg-red-600 opacity-60 scale-125" 
-            : "bg-red-600 opacity-0 scale-95 group-hover:opacity-50 group-hover:scale-110"
-        }`} />
+        {/* FIXED: Removed the separate glow element completely. */}
 
-        {/* THE CARD */}
-        <div className={`relative z-10 w-full h-full overflow-hidden border-[1px] transition-all duration-500 bg-black ${
-          isPlaying ? 'border-red-600' : isDarkMode ? 'border-zinc-900' : 'border-zinc-200 bg-zinc-50'
+        {/* THE CARD:
+            The pure glow effect is now handled directly on this container using an arbitrary box-shadow value.
+            This creates a sprawling, organic red aura without any definedGeometric boundary or shape. */}
+        <div className={`relative z-10 w-full h-full overflow-hidden border-[1px] transition-all duration-700 bg-black ${
+          isPlaying 
+            ? 'border-red-600 shadow-[0_0_90px_20px_rgba(220,38,38,0.7)]' // Solid glow while playing
+            : isDarkMode 
+              ? 'border-zinc-900 group-hover:border-red-600 group-hover:shadow-[0_0_70px_10px_rgba(220,38,38,0.5)]' // Fades glow in on hover (dark mode)
+              : 'border-zinc-200 bg-zinc-50 group-hover:border-red-600 group-hover:shadow-[0_0_70px_10px_rgba(220,38,38,0.3)]' // Fades glow in on hover (light mode)
         }`}>
           {!isPlaying ? (
             <div className="relative w-full h-full pointer-events-none">
@@ -64,7 +65,6 @@ export default function TiltCard({
       <motion.div style={{ x: xMove, opacity }} className="mt-8 text-center px-4">
         <p className={`text-base md:text-xl lg:text-2xl transition-colors duration-500 ${isDarkMode ? "text-zinc-300" : "text-zinc-600"}`}>
           <span className="font-light tracking-wide">{subtitle}</span>{" "}
-          {/* CHANGED: Reverted text color back to light/dark mode switch */}
           <span className={`font-black tracking-tight block sm:inline mt-1 sm:mt-0 ${isDarkMode ? "text-white" : "text-black"}`}>
             ({title})
           </span>
