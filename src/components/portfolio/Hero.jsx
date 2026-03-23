@@ -39,29 +39,41 @@ export default function Hero({ isDarkMode = true }) {
     <section className="w-full flex flex-col justify-center items-center pt-24 md:pt-32 pb-10 px-4 md:px-10 overflow-hidden transition-colors duration-500">
       
       <div className="text-center mb-8 md:mb-12 w-full mx-auto px-2">
-        <h1 className={`text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-sans font-black tracking-tight leading-[1.15] transition-colors duration-500 ${isDarkMode ? "text-white" : "text-black"}`}>
+        {/* FIXED: Reduced mobile font size (text-base sm:text-xl) to force a maximum of 2 lines */}
+        <h1 className={`text-base sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-sans font-black tracking-tight leading-snug md:leading-[1.15] transition-colors duration-500 ${isDarkMode ? "text-white" : "text-black"}`}>
           Congratulations! You Just Found Your<br />
           <span className="italic">YouTube Content Production Team!</span>
         </h1>
       </div>
 
-      {/* PARENT WRAPPER: Handles the hover group and the click event */}
       <div 
         className="relative w-full max-w-6xl aspect-video mx-auto group cursor-pointer"
         onClick={handleToggle}
       >
         
-        {/* CHANGED TO GOLD: Sits safely behind the video container */}
-        <div className={`absolute -inset-4 rounded-[2rem] transition-all duration-500 blur-[50px] pointer-events-none z-0 ${
-          hasStarted && !isPaused 
-            ? "bg-[#d4af37] opacity-50 scale-105" 
-            : "bg-[#d4af37] opacity-0 group-hover:opacity-100" 
-        }`} />
+        {/* === REFINED SUBTLE RED GLOW === */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          
+          {/* LAYER 1: Core - Softened the opacity and pulled the blur closer to the video */}
+          <div className={`absolute -inset-1 md:-inset-2 transition-all duration-500 blur-[15px] md:blur-[25px] rounded-3xl bg-red-600 ${
+            hasStarted && !isPaused 
+              ? "opacity-60" 
+              : "opacity-0 group-hover:opacity-60" 
+          }`} />
 
-        {/* CHANGED TO GOLD: Sits on top (z-10) and hides the video overflow */}
+          {/* LAYER 2: Bloom - Pulled the spread way in, lowered opacity, but kept the organic rounded shape */}
+          <div className={`absolute -inset-4 md:-inset-8 transition-all duration-1000 blur-[30px] md:blur-[60px] rounded-[50%] bg-red-600 ${
+            hasStarted && !isPaused 
+              ? "opacity-30 scale-100" 
+              : "opacity-0 group-hover:opacity-40 group-hover:scale-[1.05]" 
+          }`} />
+
+        </div>
+        {/* =============================== */}
+
         <div className={`relative z-10 w-full h-full overflow-hidden rounded-2xl border-2 transition-all duration-300 bg-black ${
           hasStarted && !isPaused 
-            ? 'border-[#d4af37]' 
+            ? 'border-red-600 shadow-lg shadow-red-600/20' 
             : (isDarkMode ? 'border-white/10' : 'border-zinc-200')
         }`}>
           <video
@@ -100,7 +112,6 @@ export default function Hero({ isDarkMode = true }) {
         </div>
       </div>
 
-      {/* FIXED: Placed the button safely outside the video container so it doesn't get cut off */}
       <div className="mt-12 md:mt-16 relative z-20">
         <Button>Work With Us</Button>
       </div>
